@@ -5,8 +5,56 @@
     <title>Title</title>
 </head>
 <body>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+    </tr>
+    </thead>
+    <tbody id="tBody">
+    </tbody>
+</table>
+<tr>
+    <td colspan="3" align="center"> <button type="button" id="btnSend">Enviar</button></td>
+</tr>
 
-<h1>Soy Administrador</h1>
+<script>
+    document.getElementById('btnSend').addEventListener('click', () => {
+        const xhr = new XMLHttpRequest();
 
+        xhr.open("GET", "servlet-students-Total", true);
+
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const students = JSON.parse(xhr.responseText);
+                const tbody = document.getElementById("tBody");
+
+                tbody.innerHTML = "";
+
+                students.forEach(student => {
+                    const row = document.createElement("tr");
+
+                    const id = document.createElement("td");
+                    id.appendChild(document.createTextNode(student.id));
+                    row.appendChild(id);
+
+                    const colName = document.createElement("td");
+                    colName.appendChild(document.createTextNode(student.name));
+                    row.appendChild(colName);
+
+                    const colLast = document.createElement("td");
+                    colLast.appendChild(document.createTextNode(student.apellido));
+                    row.appendChild(colLast);
+
+                    tbody.appendChild(row);
+                });
+            }
+        };
+
+        xhr.send();
+    });
+</script>
 </body>
 </html>

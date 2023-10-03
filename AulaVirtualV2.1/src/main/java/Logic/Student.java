@@ -1,23 +1,22 @@
 package Logic;
 
 public class Student {
-    private String id;
+    private int id;
     private String name;
+    private String apellido;
 
-
-    public Student(String id, String name) {
+    public Student(int id, String name, String apellido) {
         this.id = id;
         this.name = name;
+        this.apellido = apellido;
     }
 
-    public Student() {
 
-    }
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -28,4 +27,15 @@ public class Student {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
 }
+
+
+
