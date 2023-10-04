@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Nombre Materia   </th>
+        <th>Nota              </th>
+    </tr>
+    </thead>
+    <tbody id="tBody">
+    </tbody>
+</table>
+<tr>
+    <td colspan="3" align="center"> <button type="button" id="btnSend">Enviar</button></td>
+</tr>
+
+<script>
+    document.getElementById('btnSend').addEventListener('click', () => {
+        const xhr = new XMLHttpRequest();
+
+        xhr.open("GET", "servlet-average", true);
+
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const students = JSON.parse(xhr.responseText);
+                const tbody = document.getElementById("tBody");
+
+                tbody.innerHTML = "";
+
+                students.forEach(average => {
+                    const row = document.createElement("tr");
+
+                    const id = document.createElement("td");
+                    id.appendChild(document.createTextNode(average.materia_Nombre));
+                    row.appendChild(id);
+
+                    const colName = document.createElement("td");
+                    colName.appendChild(document.createTextNode(average.promedio));
+                    row.appendChild(colName);
+
+                    tbody.appendChild(row);
+                });
+            }
+        };
+
+        xhr.send();
+    });
+</script>
+</body>
+</html>

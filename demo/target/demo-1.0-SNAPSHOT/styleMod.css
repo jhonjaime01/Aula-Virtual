@@ -1,0 +1,188 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+nav{
+    background-color: #29ABE2;
+    width: 100%;
+    height: 10vh;
+    position: fixed; 
+    z-index: 2;
+}
+
+body{
+    background: #7F8C8D;
+    background: url(/fondo3.jpg);
+    background-size: cover;
+	background-position:center;
+}
+
+#ctnlogin {
+    display: flex;
+    justify-content: center;
+    float: right;
+  }
+  
+  #ctnlogin .enlace-perfil,
+  #ctnlogin .enlace-alerta {
+    margin: 15px;
+  }
+  
+  .perfil{
+    width: 45px;
+    height: auto;
+  }
+
+  .alerta {
+    width: 30px;
+    height: auto;
+  }
+
+.icon-menu{
+    width: 40px;
+    margin: 50%;
+}
+
+nav ul{
+    position: fixed;
+    padding: 0;
+    width: 20%;
+    height: 100vh;
+    background: #6a93b9;
+    top: 10%;
+    left: -100%;
+    text-align: center;
+    transition: 0.5s;
+}
+
+nav ul li{
+    display:  block;
+    margin: 10px auto;
+    line-height: 30 px;
+    
+}
+
+nav ul li a{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+li a:hover{
+    background: none;
+    color: #0957a0;
+    transition: .5s;
+}
+
+#check{
+    display: none;
+}
+
+#check:checked ~ ul{
+    left: 0;
+}
+
+.checkbtn{
+    float: left;
+}
+
+/* Secccion materias*/
+
+.materias{
+    display: block;
+    width: 100%;
+    height: 80vh;
+    overflow: auto;
+}
+
+#ctn-materias {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70vh;
+}
+
+#ctn-materias .materia {
+    text-align: center;
+    border: 5px solid white;
+    border-radius: 15px 0px;
+    width: 70%;
+    height:100vh;
+    background-color: #D8E2EF;
+    box-shadow: 0px 0px 10px rgba(29, 29, 29, 0.2);
+    margin-bottom: 5%;
+    padding: 10px;
+    color: white;
+}
+
+footer{
+    background-color: #A1B7E5;
+    color: white;
+    text-align: center;
+    padding: 5%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+
+}
+
+footer a:hover{
+    color: #cccccc;
+}
+
+
+.form-register{
+    width: 1000px;
+    background-color:  #046cce ;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+}
+
+.controls{
+    width: 100%;
+    background:   #D8E2EF;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid white;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    font-size: 18px;
+}
+
+.form-register .botons{
+    width: 100%;
+    background-color: #29ABE2;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+}
+
+h1 {
+    position: relative;
+  
+    margin-top: 500px;
+}
+
+.carrusel {
+    padding: 0px;
+    width: 100%;
+    margin-top: 0px;
+    margin-left: 50px; /* Puedes ajustar el valor de acuerdo a tus necesidades */
+   
+    position: fixed; 
+    z-index: 1;
+}
+
+
